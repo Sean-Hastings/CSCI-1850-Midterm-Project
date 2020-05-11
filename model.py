@@ -49,14 +49,14 @@ class ConvolutionalModel(Model):
     def __init__(self, norm_mean=0.0, norm_std=1.0, n_outs=1, in_size=15, activation=None):
         super(ConvolutionalModel, self).__init__(norm_mean, norm_std)
         self.conv = nn.ModuleList([
-            ConvBlock(in_size, 256, 3, batch_norm=True, dropout=.3, stride=1),
-            ConvBlock(256, 256, 3, batch_norm=True, dropout=.3, stride=2),
+            ConvBlock(in_size, 256, 3, batch_norm=True, dropout=.2, stride=1),
+            ConvBlock(256, 256, 3, batch_norm=True, dropout=.2, stride=2),
             ConvBlock(256, 128, 3, batch_norm=True, dropout=.2, stride=1),
             ConvBlock(128, 128, 3, batch_norm=True, dropout=.2, stride=2),
-            ConvBlock(128, 256, 3, batch_norm=True, dropout=.3, stride=1),
-            ConvBlock(256, 256, 3, batch_norm=True, dropout=.3, stride=2),
-            ConvBlock(256, 512, 3, batch_norm=True, dropout=.4, stride=1),
-            ConvBlock(512, 512, 3, batch_norm=True, dropout=.4, stride=2),
+            ConvBlock(128, 256, 3, batch_norm=True, dropout=.2, stride=1),
+            ConvBlock(256, 256, 3, batch_norm=True, dropout=.2, stride=2),
+            ConvBlock(256, 512, 3, batch_norm=True, dropout=.2, stride=1),
+            ConvBlock(512, 512, 3, batch_norm=True, dropout=.2, stride=2),
             ConvBlock(512, 1024, 3, batch_norm=True, dropout=.5),
             ConvBlock(1024, 1024, 1, batch_norm=True, dropout=.5),
             ConvBlock(1024, n_outs, 1, activation=activation)
